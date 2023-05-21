@@ -252,7 +252,7 @@ export default function CustomerSub() {
                       })}
                       <TableCell>
                         <Stack spacing={2} direction="row">
-                          <EditIcon
+                          <VisibilityIcon
                             style={{
                               fontSize: "20px",
                               color: "#34A853",
@@ -260,7 +260,13 @@ export default function CustomerSub() {
                             }}
                             className="cursor-pointer"
                             // onClick={() => editUser(row.id)}
-                            onClick={() => navigate("/customers/edit")}
+                            onClick={() => navigate("/customers/edit",{
+                              state:{
+                                name: row.name,
+                                contact: row.cont,
+                                address: row.addr,
+                              }
+                            })}
                           />
                           <DeleteIcon
                             style={{

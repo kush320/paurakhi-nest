@@ -77,6 +77,10 @@ const columns = [
     id: "UserId",
     label: "User ID",
   },
+  {
+    id: "Price",
+    label: "Price To Pay",
+  },
 
   {
     id: "status",
@@ -84,27 +88,27 @@ const columns = [
   },
 ];
 
-function createData(sn, QueryId, UserId, status) {
-  return { sn, QueryId, UserId, status };
+function createData(sn, QueryId, UserId,Price, status) {
+  return { sn, QueryId, UserId,Price, status };
 }
 
 const rows = [
-  createData("1", "3011", "404", "Unknown"),
-  createData("2", "3013", "405", "Unknown"),
-  createData("3", "30", "406", "Unknown"),
-  createData("4", "31", "407", "Unknown"),
-  createData("5", "3001", "408", "Unknown"),
-  createData("6", "331", "409", "Unknown"),
-  createData("7", "21", "410", "Unknown"),
-  createData("8", "11", "414", "Unknown"),
-  createData("9", "221", "424", "Unknown"),
-  createData("10", "11", "434", "Unknown"),
-  createData("11", "381", "444", "Unknown"),
-  createData("12", "391", "454", "Unknown"),
-  createData("13", "451", "604", "Unknown"),
-  createData("14", "671", "104", "Unknown"),
-  createData("15", "181", "504", "Unknown"),
-  createData("16", "271", "204", "Unknown"),
+  createData("1", "3011", "404","12000", "Unknown"),
+  createData("2", "3013", "405","12000", "Unknown"),
+  createData("3", "30", "406","12000", "Unknown"),
+  createData("4", "31", "407", "12000", "Unknown"),
+  createData("5", "3001", "408", "12000", "Unknown"),
+  createData("6", "331", "409","12000", "Unknown"),
+  createData("7", "21", "410","12000", "Unknown"),
+  createData("8", "11", "414","12000", "Unknown"),
+  createData("9", "221", "424","12000", "Unknown"),
+  createData("10", "11", "434","12000", "Unknown"),
+  createData("11", "381", "444", "12000","Unknown"),
+  createData("12", "391", "454","12000", "Unknown"),
+  createData("13", "451", "604","12000", "Unknown"),
+  createData("14", "671", "104","12000", "Unknown"),
+  createData("15", "181", "504","12000", "Unknown"),
+  createData("16", "271", "204","12000", "Unknown"),
 ];
 
 export default function CollectionSub() {
@@ -274,6 +278,7 @@ export default function CollectionSub() {
                                 state:{
                                   qrId:row.QueryId,
                                   uId:row.UserId,
+                                  price:row.Price,
                                   stat:row.status
                                 }
                               })

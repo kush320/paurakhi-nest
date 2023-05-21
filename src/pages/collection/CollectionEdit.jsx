@@ -39,7 +39,7 @@ const CollectionEdit = (props) => {
         sx={{
           minWidth: "100%",
           padding: "16px",
-          marginLeft: "30%",
+          marginLeft: "10%",
           paddingBottom: "5%",
         }}
       >
@@ -60,6 +60,14 @@ const CollectionEdit = (props) => {
             variant="outlined"
             sx={{ marginLeft: "5%", marginBottom: "1%" }}
           />
+           <TextField
+            size="small"
+            id="outlined-basic"
+            label="Price To Pay"
+            value={state.price}
+            variant="outlined"
+            sx={{ marginLeft: "5%", marginBottom: "1%" }}
+          />
           <TextField
             size="small"
             id="outlined-basic"
@@ -69,16 +77,16 @@ const CollectionEdit = (props) => {
             sx={{ marginLeft: "5%", marginBottom: "1%" }}
           />
         </Grid>
-        <Button variant="contained" color="error">
+        <Button variant="contained" color="error" sx={{ marginLeft: "5%" }}>
           Terminate Query
         </Button>
-        <Button variant="contained" color="secondary" sx={{ marginLeft: "2%" }}>
+        <Button variant="contained" color="secondary" sx={{ marginLeft: "5%" }}>
           SetUp Pickup Point
         </Button>
-        <Button variant="contained" color="primary"  sx={{ marginLeft: "2%" }}>
+        <Button variant="contained" color="primary"  sx={{ marginLeft: "5%" }}>
           SetUp to Onway
         </Button>
-        <Button variant="contained" color="success" sx={{ marginLeft: "2%" }}>
+        <Button variant="contained" color="success" sx={{ marginLeft: "5%" }}>
           Setup to Destination
         </Button>
       </Box>

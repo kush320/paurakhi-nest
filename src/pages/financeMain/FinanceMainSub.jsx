@@ -266,7 +266,11 @@ export default function FinanceMainSub() {
                             className="cursor-pointer"
                             // onClick={() => editProducts(row.prodID, row.prod, row.cat, row.price, row.qty)}
                             onClick={() =>
-                              navigate("/financeMain/financeMainEdit")
+                              navigate("/financeMain/financeMainEdit",{
+                                state:{
+                                  name: row.FinanceName,
+                                }
+                              })
                             }
                           />
                           <CancelIcon

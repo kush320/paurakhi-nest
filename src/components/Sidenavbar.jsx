@@ -203,6 +203,7 @@ function Sidenavbar(props) {
     //   { name: 'Shipments',icon: LocalShippingIcon , route: "/shipments" },
     { name: "Transactions", icon: AccountBalanceIcon, route: "/transaction" },
     { name: "Finance Query", icon: CreditCardIcon, route: "/finance" },
+    { name: "Collection Point", icon: LogoutIcon, route: "/collectionPoint" },
     { name: "Blog", icon: ContentPasteGoIcon, route: "blog" },
     { name: "News", icon: NewspaperIcon, route: "/news" },
     { name: "Finance", icon: AddCardIcon, route: "/financeMain" },
@@ -211,6 +212,7 @@ function Sidenavbar(props) {
     { name: "Staffs", icon: GroupIcon, route: "/staff" },
     { name: "Categories", icon: CategoryIcon, route: "/categories" },
     { name: "Logout", icon: LogoutIcon, route: "/login" },
+    
   ];
   const NavItem = ({ icon, route, children, ...rest }) => {
     return (

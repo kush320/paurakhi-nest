@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import TextEditor from "../../utils/TextEditor";
 import ReactCrop from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
+import { useLocation } from "react-router-dom";
 
 const FinanceMainEdit = () => {
+  const {state}=useLocation();
+  const [body, setBody] = useState("");
   const [file, setFile] = useState();
   const [crop, setCrop] = useState({
     unit: "100px",
@@ -30,6 +33,7 @@ const FinanceMainEdit = () => {
           paddingBottom: "30px",
         }}
       >
+        {JSON.stringify(state.code)}
         <Box sx={{ display: "flex", justifyContent: "center", margin: "20px" }}>
           <Typography component="h2" variant="h4">
             Finance
@@ -39,7 +43,7 @@ const FinanceMainEdit = () => {
           <Typography sx={{ fontWeight: "600", fontSize: "22px" }}>
             Tittle:
           </Typography>
-          <TextField placeholder="Enter title" />
+          <TextField defaultValue={state.name} />
         </Stack>
         <Stack sx={{ margin: "20px 0px" }}>
           <input
@@ -52,7 +56,7 @@ const FinanceMainEdit = () => {
           </ReactCrop>
         </Stack>
         <Stack>
-          <TextEditor />
+          <TextEditor required value={body} setValue={setBody} />
         </Stack>
         <Button
           color="success"

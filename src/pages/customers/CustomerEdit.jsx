@@ -1,7 +1,9 @@
 import { Box, Button, Card, Typography } from "@mui/material";
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const CustomerEdit = () => {
+  const {state}=useLocation();
   const [customers, setCustomers] = useState({
     Name: "",
     contact: "",
@@ -37,6 +39,7 @@ const CustomerEdit = () => {
       }}
     >
       <Card style={{ marginBottom: "1%" }}>
+      {JSON.stringify(state.code)}
         <Box sx={{ minWidth: "500px", padding: "16px" }}>
           <Typography
             component={"h3"}
@@ -74,7 +77,7 @@ const CustomerEdit = () => {
             <input
               style={{ height: "36px", marginLeft: "11%" }}
               type="text"
-              placeholder="Enter name"
+              value={state.name}
               onChange={handleChange}
               name="name"
             />
@@ -95,7 +98,7 @@ const CustomerEdit = () => {
             <input
               style={{ height: "36px", marginLeft: "7%" }}
               type="text"
-              placeholder="Enter contact"
+              value={state.contact}
               onChange={handleChange}
               name="contact"
             />
@@ -123,65 +126,9 @@ const CustomerEdit = () => {
             <input
               style={{ height: "36px", marginLeft: "7%" }}
               type="text"
-              placeholder="Enter address"
+              value={state.address}
               onChange={handleChange}
               name="address"
-            />
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              margin: "12px",
-              padding: "10px",
-              fontWeight: "600",
-            }}
-          >
-            <Typography
-              component={"h6"}
-              variant="body1"
-              sx={{
-                fontWeight: "600",
-                marginLeft: "20%",
-                marginTop: "2%",
-                fontFamily: "Poppins",
-              }}
-            >
-              Password
-            </Typography>
-            <input
-              style={{ height: "36px", marginLeft: "4%" }}
-              type="text"
-              placeholder="Enter password"
-              onChange={handleChange}
-              name="password"
-            />
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              margin: "12px",
-              padding: "10px",
-              fontWeight: "600",
-            }}
-          >
-            <Typography
-              component={"h6"}
-              variant="body1"
-              sx={{
-                fontWeight: "600",
-                marginLeft: "20%",
-                marginTop: "2%",
-                fontFamily: "Poppins",
-              }}
-            >
-              Orders
-            </Typography>
-            <input
-              style={{ height: "36px", marginLeft: "9%" }}
-              type="number"
-              placeholder="Enter orders"
-              onChange={handleChange}
-              name="product"
             />
           </Box>
 
@@ -193,9 +140,6 @@ const CustomerEdit = () => {
               marginTop: "30px",
             }}
           >
-            <Button color="success" onClick={handleClick} variant="contained">
-              Update
-            </Button>
           </Box>
         </Box>
       </Card>

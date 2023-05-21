@@ -104,24 +104,24 @@ const columns = [
 
 
 // DUMMY DATA START -----------------
-// function createData(prodID, prod, cat, type, price, qty, status) {
-//   return { prodID, prod, cat, type, price, qty, status };
-// }
+function createData(prodID, prod, cat, type, price, qty, status) {
+  return { prodID, prod, cat, type, price, qty, status };
+}
 
-// const rows = [
-//   createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
-//   createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
-//   createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
-//   createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
-//   createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
-//   createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
-//   createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
-//   createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
-//   createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
-//   createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
-//   createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
-//   createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
-// ];
+const rows = [
+  createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
+  createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
+  createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
+  createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
+  createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
+  createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
+  createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
+  createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
+  createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
+  createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
+  createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
+  createData("#TXASOF", "Rice", "Product1", "Request", "1400", "4", "Pending"),
+];
   // DUMMY DATA END -----------------
 const style = {
   position: "absolute",
@@ -156,19 +156,20 @@ export default function ProductsSub() {
 
   //geting data from backend
 
-  const [rows, setRows] = useState([]);
+  // const [rows, setRows] = useState([]);
 
-  useEffect(() => {
-    async function getData() {
-      try {
-        const response = await axios.get(process.env.REACT_APP_URL + "/product/get-product-staff");
-        setRows(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   async function getData() {
+  //     try {
+  //       const response = await axios.get(process.env.REACT_APP_URL + "/product/get-product-staff",
+  //       {withCredentials:true});
+  //       setRows(response.data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   }
+  //   getData();
+  // }, []);
 
   // useEffect(() => {
   //   rows();
@@ -342,7 +343,13 @@ export default function ProductsSub() {
                             }}
                             className="cursor-pointer"
                             // onClick={() => editProducts(row.prodID, row.prod, row.cat, row.price, row.qty)}
-                            onClick={() => navigate("/products/edit")}
+                            onClick={() => navigate("/products/edit",{
+                              state:{
+                                name:row.prod,
+                                pr:row.price,
+                                cate:row.cat,
+                              }
+                            })}
                           />
                           <DeleteIcon
                             style={{

@@ -1,7 +1,9 @@
 import { Box, Button, Card, Typography } from "@mui/material";
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const StaffEdit = () => {
+  const {state}=useLocation();
   const [customers, setCustomers] = useState({
     Name: "",
     contact: "",
@@ -37,6 +39,7 @@ const StaffEdit = () => {
       }}
     >
       <Card style={{ marginBottom: "1%" }}>
+      {JSON.stringify(state.code)}
         <Box sx={{ minWidth: "500px", padding: "16px" }}>
           <Typography
             component={"h3"}
@@ -74,7 +77,7 @@ const StaffEdit = () => {
             <input
               style={{ height: "36px", marginLeft: "11%" }}
               type="text"
-              placeholder="Enter name"
+              defaultValue={state.name}
               onChange={handleChange}
               name="name"
             />
@@ -95,7 +98,7 @@ const StaffEdit = () => {
             <input
               style={{ height: "36px", marginLeft: "7%" }}
               type="text"
-              placeholder="Enter contact"
+              defaultValue={state.contact}
               onChange={handleChange}
               name="contact"
             />
@@ -123,7 +126,7 @@ const StaffEdit = () => {
             <input
               style={{ height: "36px", marginLeft: "7%" }}
               type="text"
-              placeholder="Enter address"
+              defaultValue={state.address}
               onChange={handleChange}
               name="address"
             />
@@ -156,7 +159,7 @@ const StaffEdit = () => {
               name="password"
             />
           </Box>
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               margin: "12px",
@@ -183,7 +186,7 @@ const StaffEdit = () => {
               onChange={handleChange}
               name="product"
             />
-          </Box>
+          </Box> */}
 
           <Box
             sx={{

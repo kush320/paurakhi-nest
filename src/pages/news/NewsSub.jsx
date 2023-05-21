@@ -265,7 +265,11 @@ export default function NewsSub() {
                             }}
                             className="cursor-pointer"
                             // onClick={() => editProducts(row.prodID, row.prod, row.cat, row.price, row.qty)}
-                            onClick={() => navigate("/news/newsedit")}
+                            onClick={() => navigate("/news/newsedit",{
+                              state:{
+                                name: row.NewsName
+                              }
+                            })}
                           />
                           <CancelIcon
                             style={{

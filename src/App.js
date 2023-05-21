@@ -43,6 +43,10 @@ import TicketsReply from './pages/tickets/TicketsReply';
 import FinanceEdit from './pages/finance/FinanceEdit';
 import AuthContext from './stores/auth-context';
 import { useContext, useEffect } from "react";
+import CollectionPoint from './pages/CollectionPoint';
+import CollectionPointAdd from './pages/collectionPoint/CollectionPointAdd';
+import CollectionPointEdit from './pages/collectionPoint/CollectionPointEdit';
+
 
 
 function App() {
@@ -68,6 +72,9 @@ function App() {
           <Route path="/finance/financeEdit" element={<FinanceEdit/>} />
           <Route path="/blog" element={< Blog/>} />
           <Route path="/news" element={< News/>} />
+          <Route path="/collectionPoint" element={< CollectionPoint/>} />
+          <Route path="/collectionPoint/add" element={< CollectionPointAdd/>} />
+          <Route path="/collectionPoint/edit" element={< CollectionPointEdit/>} />
           <Route path="/grant" element={<Grant/>} />
           <Route path="/transaction" element={<Transaction/>} />
           <Route path="/shipments" element={<Shipments/>} />

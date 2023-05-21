@@ -201,7 +201,14 @@ export default function StaffSub() {
                                                         }}
                                                         className="cursor-pointer"
                                                         // onClick={() => editUser(row.id)}
-                                                        onClick={() => navigate('/staff/staffedit')}
+                                                        onClick={() => navigate('/staff/staffedit',{
+                                                            state:{
+                                                                name: row.name,
+                                                                contact: row.cont,
+                                                                address: row.addr,
+                                                              
+                                                            }
+                                                        })}
 
 
                                                     />

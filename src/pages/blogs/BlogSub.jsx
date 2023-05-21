@@ -266,7 +266,11 @@ export default function BlogSub() {
                             }}
                             className="cursor-pointer"
                             // onClick={() => editProducts(row.prodID, row.prod, row.cat, row.price, row.qty)}
-                            onClick={() => navigate("/blog/blogedit")}
+                            onClick={() => navigate("/blog/blogedit",{
+                              state:{
+                                title:row.BlogName
+                              }
+                            })}
                           />
                           <CancelIcon
                             style={{

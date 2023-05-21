@@ -1,7 +1,9 @@
 import { Box, Button, Card, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const EditTable = () => {
+  const {state}=useLocation();
   const [products, setProducts] = useState({
     nameOfProduct: "",
     cat: "",
@@ -37,6 +39,7 @@ const EditTable = () => {
       }}
     >
       <Card style={{ marginBottom: "2%", minWidth: "500px" }}>
+      {JSON.stringify(state.code)}
         {/* <Box sx={{ minWidth: '500px', padding: '16px'}}> */}
         <Typography
           component={"h3"}
@@ -77,7 +80,7 @@ const EditTable = () => {
           <input
             style={{ height: "36px", marginLeft: "10%" }}
             type="text"
-            placeholder="Enter product name"
+            defaultValue={state.name}
             onChange={handleChange}
             name="product"
           />
@@ -108,7 +111,7 @@ const EditTable = () => {
           <input
             style={{ height: "36px", marginLeft: "12%" }}
             type="number"
-            placeholder="Enter price"
+            defaultValue={state.pr}
             onChange={handleChange}
             name="product"
           />
@@ -138,7 +141,7 @@ const EditTable = () => {
           <input
             style={{ height: "36px", marginLeft: "4%" }}
             type="text"
-            placeholder="Enter category"
+            defaultValue={state.cate}
             onChange={handleChange}
             name="product"
           />
@@ -200,7 +203,7 @@ const EditTable = () => {
           <input 
             style={{ height: "36px", marginLeft: "0%"}}
             type="text"
-            placeholder="Enter product name"
+            placeholder="Type....."
             onChange={handleChange}
             name="product"
           />
@@ -213,7 +216,7 @@ const EditTable = () => {
             marginTop: "30px",
           }}
         >
-          <Button onClick={handleClick} variant="contained">
+          <Button color="success" onClick={handleClick} variant="contained">
             Update
           </Button>
         </Box>

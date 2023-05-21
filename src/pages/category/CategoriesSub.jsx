@@ -84,7 +84,7 @@ const CategoriesSub = () => {
               marginTop: "30px",
             }}
           >
-            <Button onClick={handleClick} variant="contained">
+            <Button color="success" onClick={handleClick} variant="contained">
               Create
             </Button>
           </Box>
