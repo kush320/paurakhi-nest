@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  /* overflow: hidden; */
+}
+
+body {
+  background: #f4f4f4;
+}
+
+ a{
+  color: #000;
+}
+
+a.active {
+  background: white;
+  color: #34A853;
+}
+ 
+
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+
+#root {
+  background: #f7f7f7;
+  
+}
+#dashboard,
+#products,
+#customers,
+#createuser,
+#queries,
+#finance,
+#financeMain,
+#tickets,
+#blog,
+#transaction,
+#collection,
+#staff,
+#news,
+#shipments,
+#grant,
+#profile,
+#categories,
+#editTable {
+  margin-top: 6%;
+  display: flex;
+  margin-left: 15%;
+}
+
+/* #dashboard {
+  padding: 30px 5px;
+} */
+
+@media only screen and (max-width: 1440px) {
+  #dashboard,
+  #products,
+  #queries,
+  #finance,
+  #financeMain,
+  #blog,
+  #news,
+  #grant,
+  #collection,
+  #staff,
+  #shipments,
+  #transaction,
+  #categories,
+  #tickets,
+  #customers {
+    margin-top: 7%;
+    display: flex;
+    margin-left: 15%;
+  }
+
+  #barChart {
+    width: '600px';
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #dashboard,
+  #products,
+  #queries,
+  #finance,
+  #financeMain,
+  #collection,
+  #blog,
+  #news,
+  #grant,
+  #shipments,
+  #transaction,
+  #staff,
+  #categories,
+  #tickets,
+  #customers {
+    margin-top: 10%;
+    display: flex;
+    margin-left: 15%;
+  }
+  #barChart {
+    width: '50%' !important;
+  }
+  #lineChart {
+    width: '40%';
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #dashboard,
+  #products,
+  #queries,
+  #finance,
+  #financeMain,
+  #blog,
+  #news,
+  #grant,
+  #shipments,
+  #collection,
+  #transaction,
+  #staff,
+  #tickets,
+  #categories,
+  #customers {
+    margin-top: 7%;
+    display: flex;
+    margin-left: 15%;
+    padding: 3%;
+  }
+  
+}
+
